@@ -24,14 +24,12 @@ jobs:
                 name: github-actions-jar
                 path: target/*.jar
             
-            - name: Create Release
-              uses: ncipollo/release-action@v1
+            - name: Create GitHub Release
+              uses: softprops/action-gh-release@v1
               with:
-                artifacts: github-actions-jar
-                name: Release ${{ github.run_number }}
-                tag: v${{ github.run_number }}
-                draft: false
-                prerelease: false
+                tag_name: v${{ github.run_number }}
+                name: "Release build #${{ github.run_number }}"
+                files: target/*.jar
               env:
                 GITHUB_TOKEN: ${{ secrets.MY_PAT }}
 
