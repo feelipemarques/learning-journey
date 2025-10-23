@@ -4,7 +4,10 @@ on:
         branches:
             github-actions
     workflow_dispatch:
-        
+
+permissions:
+  contents: write
+
 jobs:
     test-build-and-release:
         runs-on: ubuntu-latest
