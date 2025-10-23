@@ -8,10 +8,19 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+
             - name: Set up Java
               uses: actions/setup-java@v3
               with:
                   distribution: temurin
                   java-version: 21
+
             - name: Tests and build
               run: mvn clean verify package
+
+            - name: Upload JAR artifact
+              uses: actions/upload-artifact@v3
+              with:
+                name: github-actions-jar
+                path: target/github-actions-1.0.jar
+
