@@ -14,4 +14,4 @@ jobs:
                   distribution: temurin
                   java-version: 21
             - name: Tests and build
-              run: mvn -f github-actions-test/pom.xml clean verify package
+              run: mvn clean verify package
