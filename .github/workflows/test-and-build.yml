@@ -13,7 +13,7 @@ jobs:
               with:
                   distribution: temurin
                   java-version: 21
-            - name: Build with Maven
+            - name: Tests
               run: mvn -f github-actions-test/pom.xml test
-            - name: Build the project
+            - name: Build
               run: mvn -f github-actions-test/pom.xml package
