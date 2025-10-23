@@ -32,4 +32,6 @@ jobs:
                 tag: v${{ github.run_number }}
                 draft: false
                 prerelease: false
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
