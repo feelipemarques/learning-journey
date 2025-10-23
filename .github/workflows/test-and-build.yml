@@ -23,4 +23,13 @@ jobs:
               with:
                 name: github-actions-jar
                 path: target/*.jar
+            
+            - name: Create Release
+              uses: ncipollo/release-action@v1
+              with:
+                artifacts: github-actions-jar
+                name: Release ${{ github.run_number }}
+                tag: v${{ github.run_number }}
+                draft: false
+                prerelease: false
 
