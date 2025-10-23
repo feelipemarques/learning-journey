@@ -3,9 +3,7 @@ on:
     push:
         branches:
             github-actions
-        
-permissions:
-  contents: write
+
 
 jobs:
     test-build-and-release:
