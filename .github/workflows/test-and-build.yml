@@ -1,0 +1,19 @@
+name: test-and-build
+on:
+    push:
+        branches:
+            github-actions
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Set up Java
+              uses: actions/setup-java@v3
+              with:
+                  distribution: temurin
+                  java-version: 17
+            - name: Build with Maven
+              run: mvn test
+            - name: Build the project
+              run: mvn package
